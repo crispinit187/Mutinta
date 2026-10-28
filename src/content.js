@@ -53,7 +53,7 @@ export const screens = [
     body: "I'd love for us to create something beautiful together, something built on communication, kindness, laughter, friendship, and understanding.",
   },
   {
-    icon: '📸',
+    photo: { src: 'photos/picture.jpg', alt: 'MJ smiling in her Africa Must Think conference shirt', tilt: 2, ratio: '2 / 3' },
     body: 'Funny how I thought I was just taking a picture… and somehow, I ended up taking a picture of someone who became a beautiful part of my story.',
     long: true,
     sign: ['With love and honesty,', 'Tahure ❤️'],
