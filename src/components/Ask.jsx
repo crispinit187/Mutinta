@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { dodgeHints, recipient } from '../content.js'
+import { dodgeHints } from '../content.js'
 
 // The big question. "Yes" grows every time "No" runs away, and "No" can never be pressed.
 export default function Ask({ onYes, onBack }) {
@@ -68,9 +68,7 @@ export default function Ask({ onYes, onBack }) {
       <div className="icon" aria-hidden="true">
         💌
       </div>
-      <h1 className="title title-ask">
-        So, {recipient}… will you be my girlfriend?
-      </h1>
+      <h1 className="title title-ask">Will you be my girlfriend? ❤️</h1>
 
       <div className="ask-buttons">
         <button

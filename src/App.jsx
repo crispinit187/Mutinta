@@ -51,12 +51,26 @@ export default function App() {
           <Celebration />
         ) : step < ASK_STEP ? (
           <section className="card" key={step} aria-live="polite">
-            <div className="icon" aria-hidden="true">
-              {screen.icon}
-            </div>
+            {screen.photo ? (
+              <figure className="polaroid" style={{ '--tilt': `${screen.photo.tilt}deg` }}>
+                <img src={`${import.meta.env.BASE_URL}${screen.photo.src}`} alt={screen.photo.alt} />
+              </figure>
+            ) : (
+              <div className="icon" aria-hidden="true">
+                {screen.icon}
+              </div>
+            )}
             {screen.title && <h1 className="title reveal r1">{screen.title}</h1>}
-            {screen.body && <p className="body reveal r2">{screen.body}</p>}
-            {screen.quote && <p className="quote reveal r1">{screen.quote}</p>}
+            {screen.body && (
+              <p className={screen.long ? 'body body-long reveal r2' : 'body reveal r2'}>{screen.body}</p>
+            )}
+            {screen.sign && (
+              <p className="sign reveal r3">
+                {screen.sign[0]}
+                <br />
+                <strong>{screen.sign[1]}</strong>
+              </p>
+            )}
             <div className="nav">
               {step > 0 ? (
                 <button type="button" className="btn btn-ghost" onClick={back}>
